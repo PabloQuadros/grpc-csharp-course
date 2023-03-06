@@ -1,0 +1,22 @@
+syntax  = "proto3";
+
+
+package NumberDecomposition;
+
+
+message NumToDecompose{
+	int32 num = 1;
+}
+
+message NumToDecomposeRequest{
+	NumToDecompose numToDecompose =1;
+}
+
+message NumToDecomposeResponse{
+	int32 result =1;
+}
+
+
+service NumberDecompositionServices{
+	rpc numDecompose (NumToDecomposeRequest) returns (stream NumToDecomposeResponse){};
+}
